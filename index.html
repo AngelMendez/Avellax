@@ -27,14 +27,36 @@
             * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        -->        
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="app/css/index.css">
         <link rel="icon" href="app/img/favicon.ico" type="image/x-icon" />
         <title>Avellax</title>
+            <!-- 1. Load libraries -->
+            <!-- IE required polyfills, in this exact order -->
+        <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+        <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+        <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <script src="node_modules/rxjs/bundles/Rx.js"></script>
+        <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+        <!-- 2. Configure SystemJS -->
+        <script>
+        System.config({
+            packages: {        
+            app: {
+                format: 'register',
+                defaultExtension: 'js'
+            }
+            }
+        });
+        System.import('app/js/boot')
+                .then(null, console.error.bind(console));
+        </script>
     </head>
     <body>
         <div class="app">
@@ -45,7 +67,8 @@
             </div>
             <img src="app/img/Avellax.png" />
         </div>
+        <my-app>Loading...</my-app>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="app/js/index.js"></script>
+
     </body>
 </html>
