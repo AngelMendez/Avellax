@@ -36,4 +36,5 @@ build/
 .rvmrc
 npm-debug.log.225930439
 npm-debug.log.4119762431
+node_modules/
 .gitignore

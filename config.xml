@@ -11,7 +11,7 @@
     <author href="http://cordova.io" email="mendezz.angel@gmail.com">Angel Mendez</author>
     <content src="index.html" />
     <vs:features />
-    <preference name="phonegap-version" value="cli-6.0.0" />
+    <preference name="phonegap-version" value="cli-6.3.0" />
     <!--Status Bar Configuration-->
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
