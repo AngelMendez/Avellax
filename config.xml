@@ -7,7 +7,6 @@
         id="com.mendezz.Avellax" version="0.1.0" defaultlocale="en-US">
     <name>Avellax</name>
     <description>Solucion web para el estudio de fotografia de Teresa Avella</description>
-    <icon src="icon.png" gap:role="default" />
     <author href="http://cordova.io" email="mendezz.angel@gmail.com">Angel Mendez</author>
     <content src="index.html" />
     <vs:features />
